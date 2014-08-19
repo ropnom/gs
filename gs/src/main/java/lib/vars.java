@@ -32,19 +32,19 @@ public class vars {
 
 	// load buldings
 	public void LoadElements() {
-		
+
 		LoadBuildings();
 		LoadTecnologies();
 		LoadShips();
 		LoadDefenses();
 
 	}
-	
-	public void Write(){
-		
-		for( int i = 0;i<this.buildings.size();i++){
-			System.out.println("|  "+this.buildings.get(i).getIdentificador() +" : "+ this.buildings.get(i).getName()+ "  ");			
-			System.out.println("|  Metal:"+this.buildings.get(i).getMetal() +"  Cristal:"+ this.buildings.get(i).getCristal()+"  Carbone:"+ this.buildings.get(i).getCarbone()+"  Deuterio:"+ this.buildings.get(i).getDeuterium()+ "  ");
+
+	public void Write() {
+
+		for (int i = 0; i < this.buildings.size(); i++) {
+			System.out.println("|  " + this.buildings.get(i).getIdentificador() + " : " + this.buildings.get(i).getName() + "  ");
+			System.out.println("|  Metal:" + this.buildings.get(i).getMetal() + "  Cristal:" + this.buildings.get(i).getCristal() + "  Carbone:" + this.buildings.get(i).getCarbone() + "  Deuterio:" + this.buildings.get(i).getDeuterium() + "  ");
 			System.out.println("------------------------------------------------------------");
 		}
 	}
@@ -143,8 +143,63 @@ public class vars {
 		build.putPropierties(Constants.type_building, Constants.factor_2);
 		this.buildings.add(build);
 
-		// Falta hangar, terraformer, deposito de alianza, baselunar, phalanx,
-		// silo, salto cuantico.
+		// Hangar
+		element.put("hangar", builds);
+		build = new Element(builds++, "hangar", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// alliance deposit
+		element.put("alizance_deposite", builds);
+		build = new Element(builds++, "alizance_deposite", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// Advanced Base
+		element.put("advanced_base", builds);
+		build = new Element(builds++, "advanced_base", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// Phalanx
+		element.put("phalanx", builds);
+		build = new Element(builds++, "phalanx", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// Silo
+		element.put("silo", builds);
+		build = new Element(builds++, "silo", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// StarGate
+		element.put("stargate", builds);
+		build = new Element(builds++, "stargate", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// QuantumJump
+		element.put("quantumjump", builds);
+		build = new Element(builds++, "quantumjump", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		// Population Base
+		element.put("population_base", builds);
+		build = new Element(builds++, "population_base", "sin descriocion", "d");
+		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
+		build.putPropierties(Constants.type_building, Constants.factor_2);
+		this.buildings.add(build);
+
+		
 	}
 
 	private void LoadTecnologies() {
@@ -154,6 +209,7 @@ public class vars {
 	private void LoadShips() {
 
 	}
+
 	private void LoadDefenses() {
 
 	}
@@ -229,7 +285,5 @@ public class vars {
 	public static void setDefense(short defense) {
 		vars.defense = defense;
 	}
-	
-	
 
 }
