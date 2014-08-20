@@ -15,7 +15,7 @@ public class vars {
 	private final List<ElementGame> defenses;
 	private final List<ElementGame> ships;
 	private final HashMap<String, Short> indexelement;
-	private final HashMap<Short, ElementGame> element;
+	private static HashMap<Short, ElementGame> element;
 
 	// identificator number
 	private static short builds = 1;
@@ -29,7 +29,7 @@ public class vars {
 		this.defenses = new ArrayList<ElementGame>();
 		this.ships = new ArrayList<ElementGame>();
 		this.indexelement = new HashMap<String, Short>();
-		this.element = new HashMap<Short, ElementGame>();
+		element = new HashMap<Short, ElementGame>();
 		
 		LoadElements();
 	}
@@ -37,6 +37,7 @@ public class vars {
 	// load buldings
 	public void LoadElements() {
 
+		CreateElementNumeration();
 		LoadBuildings();
 		LoadTecnologies();
 		LoadShips();
@@ -74,8 +75,7 @@ public class vars {
 		indexelement.put("Silo", (short) 18);builds++;
 		indexelement.put("StarGate", (short) 19);builds++;
 		indexelement.put("QuantumJump", (short) 20);builds++;
-		indexelement.put("PopulationBase", (short) 21);builds++;
-		
+		indexelement.put("PopulationBase", (short) 21);builds++;		
 		
 	}
 
@@ -87,7 +87,7 @@ public class vars {
 		build = new ElementGame((short) 1, "Metal Mine", "sin descriocion", "d");
 		build.putPrizes(60, 15, 0, 0, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 1, build);
+		element.put((short) 1, build);
 		this.buildings.add(build);
 
 		// Cristal mine
@@ -95,7 +95,7 @@ public class vars {
 		build = new ElementGame((short) 2, "Cristal Mine", "sin descriocion", "d");
 		build.putPrizes(48, 24, 0, 0, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_6);
-		this.element.put((short) 2, build);
+		element.put((short) 2, build);
 		this.buildings.add(build);
 
 		// Carbone mine
@@ -103,7 +103,7 @@ public class vars {
 		build = new ElementGame((short) 3, "Carbone Mine", "sin descriocion", "d");
 		build.putPrizes(45, 25, 1, 0, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_8);
-		this.element.put((short) 3, build);
+		element.put((short) 3, build);
 		this.buildings.add(build);
 
 		// Deuterium mine
@@ -111,7 +111,7 @@ public class vars {
 		build = new ElementGame((short) 4, "Deuterium Mine", "sin descriocion", "d");
 		build.putPrizes(225, 75, 0, 10, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 4, build);
+		element.put((short) 4, build);
 		this.buildings.add(build);
 
 		// Carbone central
@@ -119,7 +119,7 @@ public class vars {
 		build = new ElementGame((short) 5, "Carbone Central", "sin descriocion", "d");
 		build.putPrizes(50, 20, 0, 10, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 5, build);
+		element.put((short) 5, build);
 		this.buildings.add(build);
 
 		// Geological central
@@ -127,7 +127,7 @@ public class vars {
 		build = new ElementGame((short) 6, "Geological Central", "sin descriocion", "d");
 		build.putPrizes(100, 10, 0, 0, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 6, build);
+		element.put((short) 6, build);
 		this.buildings.add(build);
 
 		// Fussion central
@@ -135,7 +135,7 @@ public class vars {
 		build = new ElementGame((short) 7, "Fission Central", "sin descriocion", "d");
 		build.putPrizes(900, 360, 180, 100, 500, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 7, build);
+		element.put((short) 7, build);
 		this.buildings.add(build);
 
 		// Solar central
@@ -143,7 +143,7 @@ public class vars {
 		build = new ElementGame((short) 8, "Solar Central", "sin descriocion", "d");
 		build.putPrizes(75, 30, 0, 10, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 8, build);
+		element.put((short) 8, build);
 		this.buildings.add(build);
 
 		// Fusion central
@@ -151,7 +151,7 @@ public class vars {
 		build = new ElementGame((short) 9, "Fusion Central", "sin descriocion", "d");
 		build.putPrizes(1000, 400, 250, 100, 50, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_6);
-		this.element.put((short) 9, build);
+		element.put((short) 9, build);
 		this.buildings.add(build);
 
 		// robot factory
@@ -159,7 +159,7 @@ public class vars {
 		build = new ElementGame((short) 10, "Robot Factory", "sin descriocion", "d");
 		build.putPrizes(400, 120, 200, 100, 10, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 10, build);
+		element.put((short) 10, build);
 		this.buildings.add(build);
 
 		// nano factory
@@ -168,14 +168,14 @@ public class vars {
 		build.putPrizes(800000, 500000, 100000, 250000, 50000, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_6);
 		this.buildings.add(build);
-		this.element.put((short) 11, build);
+		element.put((short) 11, build);
 
 		// Store
 		
 		build = new ElementGame((short) 12, "Store", "sin descriocion", "d");
 		build.putPrizes(10000, 10000, 2000, 500, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 12, build);
+		element.put((short) 12, build);
 		this.buildings.add(build);
 		
 
@@ -184,7 +184,7 @@ public class vars {
 		build = new ElementGame((short) 13, "Laboratory", "sin descriocion", "d");
 		build.putPrizes(200, 400, 200, 100, 100, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 13, build);
+		element.put((short) 13, build);
 		this.buildings.add(build);
 
 		// Hangar
@@ -192,7 +192,7 @@ public class vars {
 		build = new ElementGame((short) 14, "Hangar", "sin descriocion", "d");
 		build.putPrizes(400, 200, 100, 100, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 14, build);
+		element.put((short) 14, build);
 		this.buildings.add(build);
 
 		// alliance deposit
@@ -200,7 +200,7 @@ public class vars {
 		build = new ElementGame((short) 15, "Allizance Deposit", "sin descriocion", "d");
 		build.putPrizes(40000, 40000, 2000, 5000, 1000, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 15, build);
+		element.put((short) 15, build);
 		this.buildings.add(build);
 
 		// Advanced Base
@@ -208,7 +208,7 @@ public class vars {
 		build = new ElementGame((short) 16, "Advance Base", "sin descriocion", "d");
 		build.putPrizes(20000, 40000, 2000, 10000, 3000, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_6);
-		this.element.put((short) 16, build);
+		element.put((short) 16, build);
 		this.buildings.add(build);
 
 		// Phalanx
@@ -216,7 +216,7 @@ public class vars {
 		build = new ElementGame((short) 17, "Phalanx", "sin descriocion", "d");
 		build.putPrizes(200, 400, 200, 100, 0, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 17, build);
+		element.put((short) 17, build);
 		this.buildings.add(build);
 
 		// Silo
@@ -224,7 +224,7 @@ public class vars {
 		build = new ElementGame((short) 18, "Silo", "sin descriocion", "d");
 		build.putPrizes(20000, 20000, 2000, 1000, 5000, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 18, build);
+		element.put((short) 18, build);
 		this.buildings.add(build);
 
 		// StarGate
@@ -232,7 +232,7 @@ public class vars {
 		build = new ElementGame((short) 19, "StarGate", "sin descriocion", "d");
 		build.putPrizes(100000, 50000, 10000, 15000, 3000, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 19, build);
+		element.put((short) 19, build);
 		this.buildings.add(build);
 
 		// QuantumJump
@@ -240,7 +240,7 @@ public class vars {
 		build = new ElementGame((short) 20, "Quantum Jump", "sin descriocion", "d");
 		build.putPrizes(2000000, 4000000, 2000000, 500000, 200000, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_2);
-		this.element.put((short) 20, build);
+		element.put((short) 20, build);
 		this.buildings.add(build);
 
 		// Population Base
@@ -248,7 +248,7 @@ public class vars {
 		build = new ElementGame((short) 21, "PopulationBase", "sin descriocion", "d");
 		build.putPrizes(1000, 500, 200, 100, 10, 0, 0);
 		build.putPropierties(Constants.type_building, Constants.factor_1_5);
-		this.element.put((short) 21, build);
+		element.put((short) 21, build);
 		this.buildings.add(build);
 		
 	}
@@ -282,8 +282,8 @@ public class vars {
 		return ships;
 	}
 
-	public HashMap<Short, ElementGame > getElement() {
-		return this.element;
+	public static HashMap<Short, ElementGame > getElement() {
+		return element;
 	}
 
 	public static short getBuilds() {

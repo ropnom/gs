@@ -2,6 +2,9 @@ package lib;
 
 public class Constants {
 	
+	//Game Consig
+	public static float GameVelocity = 1;
+	
 	//Type of element
 	public static short type_building=1;
 	public static short type_tecnologie=2;

@@ -1,7 +1,11 @@
 package lib.objet;
 
+import java.awt.font.NumericShaper;
+
 public class ResourcesTransportables {
 
+	protected static short numrecourses=5;
+	
 	// Resources in storage
 	protected long Metal = 0;
 	protected long Cristal  = 0;
@@ -11,6 +15,15 @@ public class ResourcesTransportables {
 	
 	public ResourcesTransportables(){
 		
+	}
+	
+	public static short getnumrecourses(){
+		return numrecourses;
+	}
+	
+	public static void setnumrecourses(short numrs){
+		
+		numrecourses=numrs;
 	}
 	
 	public long getMetal() {

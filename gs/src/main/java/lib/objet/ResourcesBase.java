@@ -11,6 +11,7 @@ public class ResourcesBase extends ResourcesTransportables{
 	public ResourcesBase()
 	{
 		super();
+		ResourcesBase.setnumrecourses((short) 8);
 		
 	}
 	
