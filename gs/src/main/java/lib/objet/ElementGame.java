@@ -1,11 +1,11 @@
-package lib;
+package lib.objet;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.sun.research.ws.wadl.Request;
 
-public class Element {
+public class ElementGame {
 	// each element of the game, the smallest unit, a ship, a defense, a bulding
 	// etc...7
 
@@ -28,11 +28,12 @@ public class Element {
 
 	// requeriments
 	private List<Requirement> requirements;
+	private String requirements_S;
 
 	// image folder
 	private String folder;
 
-	public Element() {
+	public ElementGame() {
 		this.identificador = -1;
 		this.name = "New element without name";
 		this.descripcion = "This element not have description";
@@ -40,7 +41,7 @@ public class Element {
 		this.folder = "Not found";
 	}
 
-	public Element(short identificador, String name, String descripcion, String folder) {
+	public ElementGame(short identificador, String name, String descripcion, String folder) {
 		
 		this.identificador = identificador;
 		this.name = name;

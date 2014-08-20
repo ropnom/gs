@@ -1,4 +1,4 @@
-package lib;
+package lib.objet;
 
 public class Requirement {
 	

@@ -2,56 +2,58 @@ package modelo;
 
 import java.util.Date;
 
-public class Resourcebase {
+import lib.objet.BaseResources;
 
-	private long identificator;
-	private long owner;
-	private String spacereference;
+public class Resourcebase extends BaseResources{
+
+	protected long identificator;
+	protected long owner;
+	protected String spacereference;
 
 	// Possible resources in base.
 
-	private float Pmetal;
-	private float PCristal;
-	private float PCarbone;
-	private float Pwater;
-	private float Plife;
-	private float SolarEnergy;
-	private float PFission;
-	private float PFusion;
+	protected float Pmetal;
+	protected float PCristal;
+	protected float PCarbone;
+	protected float Pwater;
+	protected float Plife;
+	protected float SolarEnergy;
+	protected float PFission;
+	protected float PFusion;
 
-	// Resources in storage
-
-	private long Metal;
-	private long Cristal;
-	private long Carbone;
-	private long Deuterium;
-	private long Fissionable;
-	private int Energy;
-	private int Population;
+	// Resources in storage implement extends BaseResources
+//
+//	private long Metal;
+//	private long Cristal;
+//	private long Carbone;
+//	private long Deuterium;
+//	private long Fissionable;
+//	private int Energy;
+//	private int Population;
 
 	// last update of the base
-	private Date LastUpdate;	
-	private long build_event;
-	private Date finishbulding;
+	protected Date LastUpdate;	
+	protected long build_event;
+	protected Date finishbulding;
 	
 	//Falta poner la cola
-	private String Cola;
+	protected String Cola;
 	
 
-	private short Store = 0;
+	protected short Store = 0;
 
 	// Level of Mines of resources
-	private short MetalMine = 0;
-	private short CristalMine = 0;
-	private short CarboneMine = 0;
-	private short DeuteriumMine = 0;
+	protected short MetalMine = 0;
+	protected short CristalMine = 0;
+	protected short CarboneMine = 0;
+	protected short DeuteriumMine = 0;
 
-	private short FissionCentral = 0;
-	private short FusionCentral = 0;
-	private short SolarCentral = 0;
-	private short CarboneCentral = 0;
-	private short GeologicalCentral = 0;
-	private short PopulationBase = 0;
+	protected short FissionCentral = 0;
+	protected short FusionCentral = 0;
+	protected short SolarCentral = 0;
+	protected short CarboneCentral = 0;
+	protected short GeologicalCentral = 0;
+	protected short PopulationBase = 0;
 
 	// CONSTRUCTORS
 
@@ -91,6 +93,7 @@ public class Resourcebase {
 		this.PFission = PFission;
 		this.PFusion = PFusion;
 
+		
 		this.Store = 0;
 		this.Metal = 0;
 		this.Cristal = 0;
@@ -282,61 +285,7 @@ public class Resourcebase {
 		PFusion = pFusion;
 	}
 
-	public long getMetal() {
-		return Metal;
-	}
-
-	public void setMetal(long metal) {
-		Metal = metal;
-	}
-
-	public long getCristal() {
-		return Cristal;
-	}
-
-	public void setCristal(long cristal) {
-		Cristal = cristal;
-	}
-
-	public long getCarbone() {
-		return Carbone;
-	}
-
-	public void setCarbone(long carbone) {
-		Carbone = carbone;
-	}
-
-	public long getDeuterium() {
-		return Deuterium;
-	}
-
-	public void setDeuterium(long deuterium) {
-		Deuterium = deuterium;
-	}
-
-	public long getFissionable() {
-		return Fissionable;
-	}
-
-	public void setFissionable(long fissionable) {
-		Fissionable = fissionable;
-	}
-
-	public int getEnergy() {
-		return Energy;
-	}
-
-	public void setEnergy(int energy) {
-		Energy = energy;
-	}
-
-	public int getPopulation() {
-		return Population;
-	}
-
-	public void setPopulation(int population) {
-		Population = population;
-	}
+	
 
 	public Date getLastUpdate() {
 		return LastUpdate;
