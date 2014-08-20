@@ -11,7 +11,6 @@ public class Base extends ResourcesBase{
 	protected String spacereference;
 
 	// Possible resources in base.
-
 	protected float Pmetal;
 	protected float PCristal;
 	protected float PCarbone;
@@ -22,14 +21,6 @@ public class Base extends ResourcesBase{
 	protected float PFusion;
 
 	// Resources in storage implement extends BaseResources
-//
-//	private long Metal;
-//	private long Cristal;
-//	private long Carbone;
-//	private long Deuterium;
-//	private long Fissionable;
-//	private int Energy;
-//	private int Population;
 
 	// last update of the base
 	protected Date LastUpdate;	
@@ -54,7 +45,14 @@ public class Base extends ResourcesBase{
 	protected short CarboneCentral = 0;
 	protected short GeologicalCentral = 0;
 	protected short PopulationBase = 0;
-
+	
+	//Infrastructure
+	protected short Hangar;
+	protected short RobotFactory;
+	protected short AdvanceBase;
+	protected short Silo;
+	
+	
 	// CONSTRUCTORS
 
 	public Base() {
@@ -146,7 +144,7 @@ public class Base extends ResourcesBase{
 
 	}
 	
-	private boolean IncreaseBuilding(String building){
+	protected boolean IncreaseBuilding(String building){
 		
 		boolean enough = false;
 		
@@ -171,6 +169,39 @@ public class Base extends ResourcesBase{
 
 	public void setIdentificator(long identificator) {
 		this.identificator = identificator;
+	}
+
+	
+	public short getHangar() {
+		return Hangar;
+	}
+
+	public void setHangar(short hangar) {
+		Hangar = hangar;
+	}
+
+	public short getRobotFactory() {
+		return RobotFactory;
+	}
+
+	public void setRobotFactory(short robotFactory) {
+		RobotFactory = robotFactory;
+	}
+
+	public short getAdvanceBase() {
+		return AdvanceBase;
+	}
+
+	public void setAdvanceBase(short advanceBase) {
+		AdvanceBase = advanceBase;
+	}
+
+	public short getSilo() {
+		return Silo;
+	}
+
+	public void setSilo(short silo) {
+		Silo = silo;
 	}
 
 	public long getOwner() {
