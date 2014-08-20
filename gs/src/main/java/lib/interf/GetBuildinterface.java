@@ -6,9 +6,9 @@ import modelo.User;
 
 public interface GetBuildinterface {
 	
-	public ResourceCost GetCostElement(ElementGame element, User user, short nano, short robot, short hangar, short laboratory);
+	public ResourceCost GetCostElement(short element, User user, short nano, short robot, short hangar, short laboratory);
 	
-	public ResourceCost CostSpaceFly(ElementGame element, User user);
+	public ResourceCost CostSpaceFly(short element, User user);
 	
 	public boolean Isabaialable(ElementGame element, User user, short nano, short robot, short hangar, short laboratory);
 
