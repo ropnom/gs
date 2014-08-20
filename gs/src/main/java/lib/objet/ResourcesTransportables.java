@@ -1,6 +1,6 @@
 package lib.objet;
 
-public class TransportResources {
+public class ResourcesTransportables {
 
 	// Resources in storage
 	protected long Metal = 0;
@@ -9,7 +9,7 @@ public class TransportResources {
 	protected long Deuterium = 0;
 	protected long Fissionable = 0;
 	
-	public TransportResources(){
+	public ResourcesTransportables(){
 		
 	}
 	

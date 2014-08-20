@@ -2,9 +2,9 @@ package modelo;
 
 import java.util.Date;
 
-import lib.objet.BaseResources;
+import lib.objet.ResourcesBase;
 
-public class Resourcebase extends BaseResources{
+public class Base extends ResourcesBase{
 
 	protected long identificator;
 	protected long owner;
@@ -57,7 +57,7 @@ public class Resourcebase extends BaseResources{
 
 	// CONSTRUCTORS
 
-	public Resourcebase() {
+	public Base() {
 
 		this.Pmetal = 0;
 		this.PCristal = 0;
@@ -79,7 +79,7 @@ public class Resourcebase extends BaseResources{
 		this.LastUpdate = new Date();
 	}
 
-	public Resourcebase(long owner, String spacereference, float Pmetal, float PCristal, float PCarbone, float Pwater, float Plife, float SolarEnergy, float PFission, float PFusion) {
+	public Base(long owner, String spacereference, float Pmetal, float PCristal, float PCarbone, float Pwater, float Plife, float SolarEnergy, float PFission, float PFusion) {
 
 		this.owner = owner;
 		this.spacereference = spacereference;

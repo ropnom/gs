@@ -1,11 +1,28 @@
 package lib.objet;
 
-public class BaseResources extends TransportResources{
+public class ResourcesBase extends ResourcesTransportables{
 
 	// Resources in base
+	protected long money=0;
 	protected int Energy = 0;
 	protected int Population = 0;
 	
+
+	public ResourcesBase()
+	{
+		super();
+		
+	}
+	
+	
+	public long getMoney() {
+		return money;
+	}
+
+	public void setMoney(long money) {
+		this.money = money;
+	}
+
 	public int getEnergy() {
 		return Energy;
 	}
@@ -22,11 +39,6 @@ public class BaseResources extends TransportResources{
 		Population = population;
 	}
 
-	public BaseResources()
-	{
-		super();
-		
-	}
 	
 
 }

@@ -9,29 +9,29 @@ public class ElementGame {
 	// each element of the game, the smallest unit, a ship, a defense, a bulding
 	// etc...7
 
-	private short identificador;
-	private String name;
-	private String descripcion;
+	protected short identificador;
+	protected String name;
+	protected String descripcion;
 
-	// cost of element
-	private int Metal = 0;
-	private int Cristal = 0;
-	private int Carbone = 0;
-	private int Deuterium = 0;
-	private int Fissionable = 0;
-	private int Energy = 0;
-	private int Population = 0;
+	// cost of element are integer!! no extend CostResource
+	protected int Metal = 0;
+	protected int Cristal = 0;
+	protected int Carbone = 0;
+	protected int Deuterium = 0;
+	protected int Fissionable = 0;
+	protected int Energy = 0;
+	protected int Population = 0;
 
 	// type of element and facto increase with level
-	private short type = 0;
-	private float factor = 1;
+	protected short type = 0;
+	protected float factor = 1;
 
 	// requeriments
-	private List<Requirement> requirements;
-	private String requirements_S;
+	protected List<Requirement> requirements;
+	protected String requirements_S;
 
 	// image folder
-	private String folder;
+	protected String folder;
 
 	public ElementGame() {
 		this.identificador = -1;
@@ -71,12 +71,23 @@ public class ElementGame {
 		this.requirements.add(a);
 	}
 
+	
+	
 	public short getIdentificador() {
 		return identificador;
 	}
 
 	public void setIdentificador(short identificador) {
 		this.identificador = identificador;
+	}
+	
+
+	public String getRequirements_S() {
+		return requirements_S;
+	}
+
+	public void setRequirements_S(String requirements_S) {
+		this.requirements_S = requirements_S;
 	}
 
 	public String getName() {
